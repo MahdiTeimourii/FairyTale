@@ -6,6 +6,8 @@ const configuration = new Configuration({
 });
 const openai = new OpenAIApi(configuration);
 
+console.log("Now we need some time to generate the story!");
+
 const generateStory = async function ({ age, category, availableTime }) {
   const message = {
     role: "system",
@@ -29,7 +31,10 @@ const generateStory = async function ({ age, category, availableTime }) {
       messages: [message, userMessage],
     });
 
-    console.log("content", response.data.choices[0].message.content);
+    console.log(
+      "the content of the story:",
+      response.data.choices[0].message.content
+    );
     return response.data.choices[0].message.content;
   } catch (error) {
     console.log("error:", error.response.data.error);
