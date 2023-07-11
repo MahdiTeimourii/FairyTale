@@ -6,8 +6,6 @@ const configuration = new Configuration({
 });
 const openai = new OpenAIApi(configuration);
 
-console.log(process.env.OPENAI_API_KEY);
-
 const generateStory = async function ({ age, category, availableTime }) {
   const message = {
     role: "system",
@@ -22,7 +20,7 @@ const generateStory = async function ({ age, category, availableTime }) {
 
   const userMessage = {
     role: "user",
-    content: `Generate a fairy tale for a reader who is ${age} years old, likes ${category} stories, and has ${availableTime} minutes to read.`,
+    content: `Generate a fairy tale for a reader who is ${age} years old, likes ${category} stories, and has ${availableTime} minutes to read. no more then 100 words.`,
   };
 
   try {
