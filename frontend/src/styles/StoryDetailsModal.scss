@@ -10,11 +10,13 @@
   align-items: center;
 }
 .modal-box {
-  border: 1px solid #000;
-  background-color: #fff;
-  padding: 10px;
+  border: 1px solid #000000;
+  background-color: #f1bee5;
+  
+  margin: 10px;
+  padding: 50px;
   cursor: pointer;
-  width: 150px; /* Set the desired width */
+  width: 1500px; /* Set the desired width */
   height: 150px; /* Set the same value as width to create a square shape */
   /* Add more styles as needed */
 }
