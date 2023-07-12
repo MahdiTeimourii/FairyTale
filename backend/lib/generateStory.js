@@ -8,7 +8,7 @@ const openai = new OpenAIApi(configuration);
 
 console.log("Now we need some time to generate the story!");
 
-const generateStory = async function ({ age, category, availableTime }) {
+const generateStory = async function ({ name, age, category, availableTime }) {
   const message = {
     role: "system",
     content: `You are a talented storyteller capable of crafting engaging and appropriate fairy tales based on given parameters.  
@@ -22,7 +22,7 @@ const generateStory = async function ({ age, category, availableTime }) {
 
   const userMessage = {
     role: "user",
-    content: `Generate a fairy tale for a reader who is ${age} years old, likes ${category} stories, and has ${availableTime} minutes to read. no more then 100 words.`,
+    content: `Generate a personal fairy tale for a reader who has a name: ${name} who is ${age} years old, likes ${category} stories, and has ${availableTime} minutes to read.`,
   };
 
   try {
