@@ -1,9 +1,9 @@
 const { generateStory } = require("./lib/generateStory.js");
 
 const parameters = {
-  age: 7,
-  category: "adventure",
-  availableTime: 15,
+  age: 10,
+  category: "dragon",
+  availableTime: 1,
 };
 
 generateStory(parameters).then((story) => console.log(story));
