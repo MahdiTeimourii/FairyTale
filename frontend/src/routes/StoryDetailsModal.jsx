@@ -10,7 +10,16 @@ function BedtimeStoryModal({ story }) {
   return (
     <div>
       <div className="modal-box" onClick={toggleModal}>
-        Click to read the story
+        Click to read the first story
+      </div>
+      <div className="modal-box" onClick={toggleModal}>
+        Click to read the second story
+      </div>
+      <div className="modal-box" onClick={toggleModal}>
+        Click to read the third story
+      </div>
+      <div className="modal-box" onClick={toggleModal}>
+        Click to read the fourth story
       </div>
       {isOpen && (
         <div className="modal">
