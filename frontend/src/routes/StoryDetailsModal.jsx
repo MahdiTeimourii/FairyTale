@@ -1,32 +1,52 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../styles/StoryDetailsModal.scss';
 
 function BedtimeStoryModal({ story }) {
   const [isOpen, setIsOpen] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [speech, setSpeech] = useState(null);
+  const [textToSpeech, setTextToSpeech] = useState(null);
 
   const toggleModal = () => {
     setIsOpen(!isOpen);
     setIsPlaying(false);
-    if (speech) {
-      speech.cancel();
+    if (textToSpeech && typeof textToSpeech.cancel === 'function') {
+      textToSpeech.cancel();
     }
   };
 
   const playStory = () => {
     setIsPlaying(true);
-    const textToSpeech = new SpeechSynthesisUtterance(story);
-    setSpeech(textToSpeech);
-    speechSynthesis.speak(textToSpeech);
+    const speech = new SpeechSynthesisUtterance(story);
+    speech.onstart = () => {
+      const voices = speechSynthesis.getVoices();
+      const femaleVoice = voices.find(voice => voice.name === 'Microsoft Zira Desktop - English (United States)');
+      speech.voice = femaleVoice;
+      setTextToSpeech(speech);
+    };
+    speech.onend = () => {
+      setIsPlaying(false);
+    };
+    speechSynthesis.speak(speech);
   };
 
   const stopStory = () => {
     setIsPlaying(false);
-    if (speech) {
-      speech.cancel();
+    if (typeof speechSynthesis.cancel === 'function') {
+      speechSynthesis.cancel();
     }
   };
+  
+
+  useEffect(() => {
+    if (textToSpeech) {
+      textToSpeech.onend = () => {
+        setIsPlaying(false);
+      };
+      return () => {
+        textToSpeech.onend = null;
+      };
+    }
+  }, [textToSpeech]);
 
   return (
     <div>
