@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../styles/TextBox.scss";
 
-const TextBox = () => {
+const TextBox = ({ onStoryGenerated }) => {
   const [name, setName] = useState("");
   const [category, setCategory] = useState("");
   const [age, setAge] = useState("");
@@ -43,6 +43,7 @@ const TextBox = () => {
       })
       .then(function (res) {
         console.log(res);
+        onStoryGenerated(res);
       })
       .catch(function (res) {
         console.log(res);
