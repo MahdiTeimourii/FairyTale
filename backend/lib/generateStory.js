@@ -39,6 +39,7 @@ const generateStory = async function ({ name, age, category, availableTime }) {
   } catch (error) {
     console.log("error:", error.response.data.error);
     // console.error("An error occurred: ", error);
+    // some test
     return error;
   }
 };
