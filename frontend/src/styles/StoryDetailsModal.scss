@@ -12,17 +12,18 @@
 .modal-box {
   border: 1px solid #000000;
   background-color: #f1bee5;
-  
-  margin: 10px;
+  margin: 100px;
   padding: 50px;
   cursor: pointer;
-  width: 1500px; /* Set the desired width */
-  height: 150px; /* Set the same value as width to create a square shape */
-  /* Add more styles as needed */
+  width: 1500px;
+  height: 150px;
+  background-image: url('/images/logo.png'); 
+  background-size: cover; 
 }
 
+
 .modal-content {
-  background-color: #93e8eb;
+  background-color: #9dffff;
   padding: 20px;
   border-radius: 4px;
   width: 400px;
