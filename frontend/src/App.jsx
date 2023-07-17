@@ -17,12 +17,19 @@ const App = () => {
       <TopNavBar />
       <div className="page-content">
         <h3>
+
           Introducing FairlyTale, the enchanting web app that weaves magical
           bedtime stories with just a click. Designed to spark imagination and
           bring joy to young minds, FairlyTale generates unique tales filled
           with adventure, whimsy, and valuable life lessons. Say goodnight to
           dull bedtime routines and embrace the enchantment of storytelling like
           never before..
+
+          Introducing FairyTale, the enchanting web app that weaves magical bedtime stories with just a click.
+          Designed to spark imagination and bring joy to young minds, FairlyTale generates unique tales filled with
+          adventure, whimsy, and valuable life lessons. Say goodnight to dull bedtime routines and embrace the
+          enchantment of storytelling like never before..
+
         </h3>
         <p>This is the content of your page.</p>
         <TextBox onStoryGenerated={modifyStory} />

@@ -69,16 +69,22 @@ const TextBox = ({ onStoryGenerated }) => {
           onChange={handleCategoryChange}
         >
           <option value="">Select category</option>
-          <option value="Category 1">Category 1</option>
-          <option value="Category 2">Category 2</option>
-          <option value="Category 3">Category 3</option>
+          <option value="Category 1">Dragons</option>
+          <option value="Category 2">Princess</option>
+          <option value="Category 3">Animals</option>
+          <option value="Category 4">Magic</option>
+          <option value="Category 5">science</option>
+          <option value="Category 6">Angel</option>
+          <option value="Category 7">Knight</option>
+          <option value="Category 8">Family</option>
+          <option value="Category 9">Nature</option>
         </select>
 
         <select className="dropdown" value={age} onChange={handleAgeChange}>
           <option value="">Select age</option>
-          <option value="Age 1">Age 1</option>
-          <option value="Age 2">Age 2</option>
-          <option value="Age 3">Age 3</option>
+          <option value="Age 1">1-5 Years Old</option>
+          <option value="Age 2">5-10 Years Old</option>
+          <option value="Age 3">10-15 Years Old</option>
         </select>
 
         <select
@@ -87,9 +93,11 @@ const TextBox = ({ onStoryGenerated }) => {
           onChange={handleDurationChange}
         >
           <option value="">Select duration</option>
-          <option value="Duration 1">Duration 1</option>
-          <option value="Duration 2">Duration 2</option>
-          <option value="Duration 3">Duration 3</option>
+          <option value="Duration 1">2 Minutes</option>
+          <option value="Duration 2">5 Minutes</option>
+          <option value="Duration 3">7 Minutes</option>
+          <option value="Duration 4">12 Minutes</option>
+          <option value="Duration 5">15 Minutes</option>
         </select>
 
         <button type="submit" className="button">
