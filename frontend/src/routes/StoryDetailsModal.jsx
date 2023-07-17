@@ -1,14 +1,7 @@
-
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/StoryDetailsModal.scss";
 
 function BedtimeStoryModal({ genStory }) {
-
-import React, { useState, useEffect } from 'react';
-import '../styles/StoryDetailsModal.scss';
-
-function BedtimeStoryModal({ story }) {
-
   const [isOpen, setIsOpen] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [textToSpeech, setTextToSpeech] = useState(null);
@@ -16,17 +9,20 @@ function BedtimeStoryModal({ story }) {
   const toggleModal = () => {
     setIsOpen(!isOpen);
     setIsPlaying(false);
-    if (textToSpeech && typeof textToSpeech.cancel === 'function') {
+    if (textToSpeech && typeof textToSpeech.cancel === "function") {
       textToSpeech.cancel();
     }
   };
 
   const playStory = () => {
     setIsPlaying(true);
-    const speech = new SpeechSynthesisUtterance(story);
+    const speech = new SpeechSynthesisUtterance(genStory);
     speech.onstart = () => {
       const voices = speechSynthesis.getVoices();
-      const femaleVoice = voices.find(voice => voice.name === 'Microsoft Zira Desktop - English (United States)');
+      const femaleVoice = voices.find(
+        (voice) =>
+          voice.name === "Microsoft Zira Desktop - English (United States)"
+      );
       speech.voice = femaleVoice;
       setTextToSpeech(speech);
     };
@@ -38,11 +34,10 @@ function BedtimeStoryModal({ story }) {
 
   const stopStory = () => {
     setIsPlaying(false);
-    if (typeof speechSynthesis.cancel === 'function') {
+    if (typeof speechSynthesis.cancel === "function") {
       speechSynthesis.cancel();
     }
   };
-  
 
   useEffect(() => {
     if (textToSpeech) {
@@ -60,15 +55,7 @@ function BedtimeStoryModal({ story }) {
       <div className="modal-box" onClick={toggleModal}>
         Click to read the first story
       </div>
-      <div className="modal-box" onClick={toggleModal}>
-        Click to read the second story
-      </div>
-      <div className="modal-box" onClick={toggleModal}>
-        Click to read the third story
-      </div>
-      <div className="modal-box" onClick={toggleModal}>
-        Click to read the fourth story
-      </div>
+      {/* ... */}
       {isOpen && (
         <div className="modal">
           <div className="modal-content">
@@ -77,14 +64,15 @@ function BedtimeStoryModal({ story }) {
             </span>
             <p>{genStory}</p>
 
-            <span className="close" onClick={toggleModal}>&times;</span>
             {isPlaying ? (
-              <button className="play-button" onClick={stopStory}>Stop</button>
+              <button className="play-button" onClick={stopStory}>
+                Stop
+              </button>
             ) : (
-              <button className="play-button" onClick={playStory}>Play</button>
+              <button className="play-button" onClick={playStory}>
+                Play
+              </button>
             )}
-            <p>{story}</p>
-
           </div>
         </div>
       )}
