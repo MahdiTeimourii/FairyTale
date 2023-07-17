@@ -1,0 +1,30 @@
+.app {
+  /* Define styles for the app container */
+  background-color: #f7f7f7;
+  font-family: Arial, sans-serif;
+  background-image: url('../images/Background.png');
+  background-size: cover;
+  background-position: center;
+}
+
+
+.page-content {
+  /* Define styles for the page content */
+  padding: 20px;
+}
+
+h3 {
+  /* Define styles for the heading */
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+img {
+  /* Define styles for the background image */
+  width: 100%;
+  height: auto;
+  max-width: 800px;
+  display: block;
+  margin: 0 auto;
+}
