@@ -53,7 +53,7 @@ function BedtimeStoryModal({ genStory }) {
   return (
     <div>
       <div className="modal-box" onClick={toggleModal}>
-        Click to read the first story
+        Click to read the generated story
       </div>
       {/* ... */}
       {isOpen && (

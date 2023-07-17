@@ -1,15 +1,15 @@
 import React from 'react';
 import "../styles/TopNavBar.scss";
-import "../images/logo.png";
+import logo from "../images/logo.png";
 
 const TopNavBar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-logo">
-      <img src="../images/logo.png" alt="Logo" />
-        
+        <img src={logo} alt="Logo" />
+
       </div>
-      <div className="navbar-title">Fairly Tale</div>
+      <div className="navbar-title"></div>
       <div className="navbar-button">
         <button>Day Mode</button>
       </div>
