@@ -3,9 +3,6 @@ import TopNavBar from "./components/TopNavBar";
 import TextBox from "./components/TextBox";
 import BedtimeStoryModal from "./routes/StoryDetailsModal";
 import "./App.scss";
-import BackGround from "./images/BackGround.png";
-
-// import { generateStory } from "../../backend/lib/generateStory";
 
 const App = () => {
   const [story, setStory] = useState("Click Generate to create a story");
@@ -30,7 +27,7 @@ const App = () => {
         <TextBox onStoryGenerated={modifyStory} />
         <BedtimeStoryModal genStory={story} />
         {/* Pass the generated bedtime story */}
-        <img src={BackGround} alt="BackGround" />
+
       </div>
     </div>
   );
