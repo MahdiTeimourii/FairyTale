@@ -1,7 +1,14 @@
+
+import React, { useState } from "react";
+import "../styles/StoryDetailsModal.scss";
+
+function BedtimeStoryModal({ genStory }) {
+
 import React, { useState, useEffect } from 'react';
 import '../styles/StoryDetailsModal.scss';
 
 function BedtimeStoryModal({ story }) {
+
   const [isOpen, setIsOpen] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [textToSpeech, setTextToSpeech] = useState(null);
@@ -65,6 +72,11 @@ function BedtimeStoryModal({ story }) {
       {isOpen && (
         <div className="modal">
           <div className="modal-content">
+            <span className="close" onClick={toggleModal}>
+              &times;
+            </span>
+            <p>{genStory}</p>
+
             <span className="close" onClick={toggleModal}>&times;</span>
             {isPlaying ? (
               <button className="play-button" onClick={stopStory}>Stop</button>
@@ -72,6 +84,7 @@ function BedtimeStoryModal({ story }) {
               <button className="play-button" onClick={playStory}>Play</button>
             )}
             <p>{story}</p>
+
           </div>
         </div>
       )}
