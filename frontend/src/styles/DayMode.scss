@@ -1,0 +1,60 @@
+
+.dark-mode {
+  background-color: #333;
+  color: #fff;
+}
+
+.light-mode {
+  background-color: #fff;
+  color: #333;
+}
+
+.dark-mode-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark-mode-toggle:hover,
+.dark-mode-toggle:focus {
+  background-color: #fff;
+  color: #333;
+}
+
+.dark-mode-toggle:hover span,
+.dark-mode-toggle:focus span {
+  color: #fff;
+}
+
+.light-mode-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  color: #333;
+  padding: 10px 20px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.light-mode-toggle:hover,
+.light-mode-toggle:focus {
+  background-color: #333;
+  color: #fff;
+}
+
+.light-mode-toggle:hover span,
+.light-mode-toggle:focus span {
+  color: #333;
+}
+
+

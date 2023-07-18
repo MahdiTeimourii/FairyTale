@@ -9,25 +9,25 @@
   justify-content: center;
   align-items: center;
 }
+
 .modal-box {
   border: 1px solid #000000;
   background-color: #f1bee5;
-  margin: 100px;
   padding: 50px;
   cursor: pointer;
-  width: 1500px;
-  height: 150px;
   background-image: url('/images/logo.png'); 
   background-size: cover; 
+  max-width: 80%;
+  max-height: 80%;
+  display: flex; /* Changed from flex to inline-block */
 }
-
 
 .modal-content {
   background-color: #5364f5;
   padding: 20px;
   border-radius: 4px;
-  width: 400px;
-  max-width: 90%;
+  max-width: 80%;  /* limit width to 80% of the screen width */
+  margin: auto; /* Center the content */
   position: relative;
 }
 
