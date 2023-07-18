@@ -104,8 +104,10 @@ const TextBox = ({ onStoryGenerated }) => {
         <button type="submit" className="button">
           Generate
         </button>
+        <div className="waiting">
         {loading && <CircleLoader />}{" "}
         {/* loading spinner is shown only if we're loading */}
+        </div>
       </form>
     </div>
   );
