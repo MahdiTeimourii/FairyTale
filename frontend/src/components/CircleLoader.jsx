@@ -22,9 +22,9 @@ const circleStyle = {
 };
 
 const spinTransition = {
-  loop: Infinity,
+  repeat: Infinity,
   ease: "linear",
-  duration: 1,
+  duration: 2,
 };
 
 export default function CircleLoader() {

@@ -3,6 +3,7 @@ import TopNavBar from "./components/TopNavBar";
 import TextBox from "./components/TextBox";
 import BedtimeStoryModal from "./routes/StoryDetailsModal";
 import "./App.scss";
+import CircleLoader from "./components/CircleLoader";
 
 const App = () => {
   const [story, setStory] = useState("Click Generate to create a story");
@@ -27,7 +28,6 @@ const App = () => {
         <TextBox onStoryGenerated={modifyStory} />
         <BedtimeStoryModal genStory={story} />
         {/* Pass the generated bedtime story */}
-
       </div>
     </div>
   );
