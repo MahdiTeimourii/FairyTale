@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import "../styles/TextBox.scss";
+import CircleLoader from "./CircleLoader";
 
 const TextBox = ({ onStoryGenerated }) => {
   const [name, setName] = useState("");
   const [category, setCategory] = useState("");
   const [age, setAge] = useState("");
   const [duration, setDuration] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleNameChange = (event) => {
     setName(event.target.value);
@@ -31,6 +33,7 @@ const TextBox = ({ onStoryGenerated }) => {
     console.log("Age:", age);
     console.log("Duration:", duration);
 
+    setLoading(true);
     fetch("http://localhost:3001/api/generate-story", {
       headers: {
         "Content-Type": "application/json",
@@ -44,9 +47,11 @@ const TextBox = ({ onStoryGenerated }) => {
       .then(function (res) {
         console.log(res);
         onStoryGenerated(res);
+        setLoading(false);
       })
       .catch(function (res) {
         console.log(res);
+        setLoading(false);
       });
     // You can perform further actions here, such as making an API call
     // or updating the state of your parent component
@@ -62,7 +67,6 @@ const TextBox = ({ onStoryGenerated }) => {
           value={name}
           onChange={handleNameChange}
         />
-
         <select
           className="dropdown"
           value={category}
@@ -79,14 +83,12 @@ const TextBox = ({ onStoryGenerated }) => {
           <option value="Category 8">Family</option>
           <option value="Category 9">Nature</option>
         </select>
-
         <select className="dropdown" value={age} onChange={handleAgeChange}>
           <option value="">Select age</option>
           <option value="Age 1">1-5 Years Old</option>
           <option value="Age 2">5-10 Years Old</option>
           <option value="Age 3">10-15 Years Old</option>
         </select>
-
         <select
           className="dropdown"
           value={duration}
@@ -99,10 +101,13 @@ const TextBox = ({ onStoryGenerated }) => {
           <option value="Duration 4">12 Minutes</option>
           <option value="Duration 5">15 Minutes</option>
         </select>
-
         <button type="submit" className="button">
           Generate
         </button>
+        <div className="waiting">
+        {loading && <CircleLoader />}{" "}
+        {/* loading spinner is shown only if we're loading */}
+        </div>
       </form>
     </div>
   );
