@@ -4,7 +4,7 @@ const parameters = {
   name: "Bob",
   age: 10,
   category: "dragon",
-  availableTime: 1,
+  availableTime: 15,
 };
 
 generateStory(parameters).then((story) => console.log(story));
