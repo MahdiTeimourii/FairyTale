@@ -67,6 +67,12 @@ const TextBox = ({ onStoryGenerated }) => {
           value={name}
           onChange={handleNameChange}
         />
+        <select className="dropdown" value={age} onChange={handleAgeChange}>
+          <option value="">Select age</option>
+          <option value="Age 1">1-5 Years Old</option>
+          <option value="Age 2">5-10 Years Old</option>
+          <option value="Age 3">10-15 Years Old</option>
+        </select>
         <select
           className="dropdown"
           value={category}
@@ -82,12 +88,6 @@ const TextBox = ({ onStoryGenerated }) => {
           <option value="Category 7">Knight</option>
           <option value="Category 8">Family</option>
           <option value="Category 9">Nature</option>
-        </select>
-        <select className="dropdown" value={age} onChange={handleAgeChange}>
-          <option value="">Select age</option>
-          <option value="Age 1">1-5 Years Old</option>
-          <option value="Age 2">5-10 Years Old</option>
-          <option value="Age 3">10-15 Years Old</option>
         </select>
         <select
           className="dropdown"
@@ -105,8 +105,8 @@ const TextBox = ({ onStoryGenerated }) => {
           Generate
         </button>
         <div className="waiting">
-        {loading && <CircleLoader />}{" "}
-        {/* loading spinner is shown only if we're loading */}
+          {loading && <CircleLoader />}{" "}
+          {/* loading spinner is shown only if we're loading */}
         </div>
       </form>
     </div>
